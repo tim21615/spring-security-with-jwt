@@ -3,7 +3,6 @@ package com.example.security.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,12 +30,13 @@ public class MySecurityConfig {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		return http.csrf(csrf -> csrf.disable()).httpBasic(Customizer.withDefaults())
+		return http.cors(Customizer.withDefaults()).csrf(csrf -> csrf.disable())
+				.httpBasic(Customizer.withDefaults())
 				.formLogin(Customizer.withDefaults())
 				.authorizeHttpRequests(
 						request -> request
 							.requestMatchers("/api/auth/**").permitAll()
-							.requestMatchers("/test").hasRole("ADMIN")
+							.requestMatchers("/test").hasAnyRole("ADMIN", "USER")
 							.anyRequest().authenticated())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
 				.build();
