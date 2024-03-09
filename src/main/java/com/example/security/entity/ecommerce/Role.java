@@ -1,8 +1,6 @@
-package com.example.security.entity;
+package com.example.security.entity.ecommerce;
 
 import java.io.Serializable;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,31 +13,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "member")
+@Table(name = "role")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Member implements Serializable {
+public class Role implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name= "member_id")
-	private Integer memberId;
+	@Column(name= "role_id")
+	private Integer roleId;
 	
-	@Column(name= "email")
-	private String email;
-	
-	@JsonIgnore
-	@Column(name= "password")
-	private String password;
-	
-	@Column(name= "name")
-	private String name;
-	
-	@Column(name= "age")
-	private Integer age;
-	
+	@Column(name= "role_name")
+	private String roleName;
 	
 }
