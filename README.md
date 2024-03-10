@@ -1,5 +1,5 @@
 # Shopping Center
-本來在練習 Spring Security 結合 JWT 的登入認證，做完後，突然覺得乾脆做一個 電商網站的 Side Project 好了...因此有了此專案
+本來在練習 Spring Security 結合 JWT 的登入認證，做完後，突然覺得乾脆做一個 電商網站的 Side Project 好了...因此有了此專案!
 #### 目前有的功能
 1. Spring Security 結合 JWT 做登入認證
 2. 使用者資訊的 Api
