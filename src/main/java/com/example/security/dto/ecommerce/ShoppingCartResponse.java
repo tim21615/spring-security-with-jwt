@@ -9,21 +9,26 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductDTO implements Serializable {
+public class ShoppingCartResponse implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private Integer memberId;
+	
 	private Integer productId;
 	
 	private String productName;
-	
-	private String productType;
 	
 	private Integer productPrice;
 	
 	private Integer stock;
 	
+	private Integer quantity;
+	
 	private Boolean available;
 	
 	private byte[] productPicture;
+	
+	
+
 }

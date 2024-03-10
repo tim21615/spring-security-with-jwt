@@ -42,7 +42,7 @@ public class Product implements Serializable {
 	private Integer stock;
 	
 	@Column(name= "available")
-	private boolean available;
+	private Boolean available;
 	
 	@Lob
 	@Basic(fetch = FetchType.LAZY)
