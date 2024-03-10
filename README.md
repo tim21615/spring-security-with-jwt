@@ -17,3 +17,6 @@
 1. 結帳 (注意交易控制)
 2. 後台新增商品、修改商品、商品上下架等功能
 3. 查看訂單
+
+<br>
+前端專案連結 : https://github.com/tim21615/eCommerce-frontend
